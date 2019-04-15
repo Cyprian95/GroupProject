@@ -1,0 +1,93 @@
+<html>
+   <head>
+
+<style type='text/css'>
+<!--
+h1 {
+	border: none;
+	background: black;
+	color: white;
+	font: bold 18pt Helvetica, Arial, sans-serif;
+   text-align: center;
+	padding: 0.25em;
+   }
+.container {	
+      background: blue;
+		color: white;
+		padding: 2em;
+		text-align: centre;
+      width: 100px;
+      clear: both;
+   }
+.container input {
+   width: 100%;
+   clear: both;
+}
+
+.jumbotron {
+   background-color: #800080 !important;
+}
+
+-->
+</style>
+
+<title>Gene Database Project</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+   </head>
+   <body>
+      <div class="page-header">
+         <h1>Gene Database Project</h1>
+      </div>
+
+      <div class="container">
+<!-- it's going to provide padding around itself. Can use another one it's called "container-fluid" but: 
+- "container" is going to put padding around everything in that it contains 
+- "container-fluid" is not it's just going to make everything butt up against the outside of the screen 
+We use it because bootstrap grids require a container inside of them
+-->
+
+      <div class="jumbotron">
+<!-- jumbotron will enlarge fonts and put everything inside of a gray box by default with rounded corners. Can change from that gray box to any other color. FYI: if Jumbotron is used outside of a container it's going to completely fill the total width of whatever screen it is displayed -->
+
+
+<!--REQUIREMENTS POINT 2: You must be able to search the database to find an entry based on gene identifier, protein product names, Genbank accession, or chromosomal location. -->
+
+
+         <form name='search' action="/cgi-bin/cgi_script.py" method="post">
+         <!-- 
+         if this "form action" doesn't work, then use:
+            <form action="{{ url_for('cgi_script') }}" method="post"> 
+               Use POST since it does not show in the URL and is unlimited in terms of length of input values- might change it later to get, as none of the below input values will be long enough, left it for now so you can see it calls the cgi right script
+         -->
+            <label> Gene identifier </label>
+            <input type='text' name='query' size='49' maxlength="4" />
+            <br /><br />
+
+            <label> Protein product names </label> 
+            <input name='query' type='text' size='49' />
+            <br /><br />
+
+            <label> GenBank accession number </label>
+            <input name='query' type='text' size='49' />
+            <br /><br />
+
+            <label> Chromosomal location </label>
+            <input name='query' type='text' size='49' />
+            <br />
+            <input type="submit" value="Submit">
+         </form>
+      </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+   </body>
+</html>
